@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Prolific -->
+    <usb-device vendor-id="1659" product-id="8963"  /> <!-- 0x067b 0x2303 PL2303 Serial  -->
+    <usb-device vendor-id="1659" product-id="4660"  /> <!-- 0x067b 0x1234 DCU-11 Phone Cable -->
+    <usb-device vendor-id="21362" product-id="8963" /> <!-- 0x5372 0x2303 Prolific2 PL2303 -->
+
+    <!--  Generic comunnication device with Abstract Control Model subclass -->
+    <usb-device class="2" subclass="0" protocol="0" />
+    
+    <!-- FTDI -->
+    <usb-device vendor-id="1118" product-id="688"   />  
+	<usb-device vendor-id="1027" product-id="24577" /> <!-- FT232RL -->
+	<usb-device vendor-id="1027" product-id="24596" /> <!-- FT232H -->
+	<usb-device vendor-id="1027" product-id="24592" /> <!-- FT2232C/D/HL -->
+	<usb-device vendor-id="1027" product-id="24593" /> <!-- FT4232HL -->
+	<usb-device vendor-id="1027" product-id="24597" /> <!-- FT230X -->
+	<usb-device vendor-id="1412" product-id="45088" /> <!-- REX-USB60F -->
+</resources>

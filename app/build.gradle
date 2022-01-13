@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "gpsplus.rtkgps"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            // 指定编译架构 可以省略
+            abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    // 在android节点下
+    // 指定CMakeLists.txt路径
+    /* externalNativeBuild {
+         cmake {
+             // 在该文件种设置所要编写的c源码位置，以及编译后so文件的名字
+             path "src/main/jni/CMakeLists.txt"
+             // cmake版本 可以省略
+             version "3.10.2"
+         }
+     }*/
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation files('libs\\junit-4.12.jar')
+//    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.preference:preference:1.1.0'
+
+    implementation group: 'cz.msebera.android', name: 'httpclient', version: '4.4.+'
+    implementation 'com.google.gms:google-services:3.2.1'
+    implementation 'com.google.android.gms:play-services-gcm:11.0.4'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'ch.acra:acra:4.5.0'
+    implementation 'commons-net:commons-net:3.6'
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'com.infstory:proguard-annotations:1.0.1'
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation 'com.hjq:toast:8.8'
+
+    implementation files('libs\\prebuilt\\dropbox-sync-sdk-android.jar')
+    implementation files('libs\\d2xx.jar')
+    implementation files('libs\\gdal.jar')
+    implementation files('libs\\osmdroid-android-4.2.jar')
+    implementation files('libs\\osmdroid-third-party-4.2.jar')
+}

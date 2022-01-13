@@ -1,0 +1,8 @@
+import "msg/point3d.proto";
+
+package geometry;
+
+message plane{
+	required point3d point = 1;
+	required point3d normal = 2;
+}

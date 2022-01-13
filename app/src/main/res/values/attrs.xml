@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <declare-styleable name="GTimeView">
+       <attr name="time_format" format="enum">
+           <enum name="gps" value="0"  />
+           <enum name="utc" value="1"/>
+           <enum name="local" value="2"/>
+           <enum name="gps_tow" value="3"/>
+       </attr>
+       <attr name="time_template" format="string"/>
+   </declare-styleable>
+   
+	<declare-styleable name="SnrView">
+	    <attr name="grid_text_size" format="integer"/>
+	    <attr name="grid_text_color" format="color"/>
+	</declare-styleable>
+	
+	<declare-styleable name="SolutionView">
+	    <attr name="format" format="enum">
+           <enum name="wgs84" value="0"  />
+           <enum name="wgs84_float" value="1"/>
+           <enum name="ecef" value="2"/>
+           <enum name="baseline_enu" value="3"/>
+           <enum name="baseline_pyl" value="4"/>
+       </attr>
+       <attr name="textColor" format="color" />
+	</declare-styleable>
+
+	<declare-styleable name="StreamSettings">
+	    <attr name="key_prefix" format="string" />
+	    <attr name="title_enable_stream" format="reference" />
+	    <attr name="stream_type_preference_class" format="string"/>
+	</declare-styleable>
+</resources>

@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ch.ethz.asl.androidlink"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <supports-screens android:resizeable="true"
+                      android:smallScreens="true" 
+                      android:normalScreens="true" 
+                      android:largeScreens="true" 
+                      android:anyDensity="true" />
+    
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+        
+</manifest>
